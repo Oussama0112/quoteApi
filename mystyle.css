@@ -1,0 +1,88 @@
+:root {
+  --main-color: #0debc4;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background-color: var(--main-color);
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid #777;
+  box-shadow: 0 0 10px #777;
+  background-color: var(--main-color);
+  padding: 1em;
+  border-radius: 0.5em;
+  max-width: 500px;
+  align-items: center;
+  text-transform: capitalize;
+  min-height: 220px;
+}
+.container h1 {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px;
+}
+hr {
+  width: 100%;
+}
+.container .wraper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.container .quote,
+.container .author {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+.container .author {
+  align-self: end;
+  font-weight: 700;
+}
+button {
+  --tran-or: right;
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  background-color: transparent;
+  padding: 0.3em 0.8em;
+  text-transform: capitalize;
+  cursor: pointer;
+  border: 1px solid #777;
+  border-radius: 0.2em;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  box-shadow: 0 0 10px 2px #777 inset;
+}
+button::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transform: scale(0, 0);
+  transition: 0.5s;
+  box-shadow: 0 0 50px 10px #777 inset;
+
+  transform-origin: var(--tran-or);
+}
+button:hover::before {
+  transform: scale(1, 1);
+}
